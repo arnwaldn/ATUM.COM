@@ -43,6 +43,7 @@ next-env.d.ts
 # Documentation & source files (not for deployment)
 *.pdf
 *.mp4
+!public/videos/logo-animation.mp4
 01-ULTRACREA-EXECUTION-PLAN.md
 02-BRIEF-GRAPHIC-DESIGNER.md
 
