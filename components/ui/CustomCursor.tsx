@@ -218,7 +218,7 @@ export function CustomCursor() {
         top: 0,
         left: 0,
         pointerEvents: 'none',
-        zIndex: 99999,
+        zIndex: 9998,
         opacity: isVisible ? 1 : 0,
         transition: 'opacity 0.3s ease',
       }}
