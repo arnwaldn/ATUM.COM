@@ -53,6 +53,7 @@ export function CookieBanner() {
           borderRadius: '16px',
           padding: '24px',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+          cursor: 'auto',
         }}
       >
         <div style={{ marginBottom: '16px' }}>
