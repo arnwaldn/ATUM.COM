@@ -12,6 +12,7 @@
 - **Animations**: GSAP + ScrollTrigger
 - **Smooth Scroll**: Lenis
 - **i18n**: next-intl (FR/EN)
+- **Analytics**: Google Analytics 4 (conditionnel)
 - **Déploiement**: Vercel
 - **Repo**: https://github.com/arnwaldn/ATUM.COM
 
@@ -24,92 +25,110 @@
 
 ## Travail Accompli (Session du 4 Fév 2026)
 
-### 1. Curseur Personnalisé - Eye of Horus
+### 1. Curseur Personnalisé - Eye of Horus ✅
 - **Fichier**: `components/ui/CustomCursor.tsx`
 - Curseur SVG représentant l'Œil d'Horus (thème égyptien)
 - Animation GSAP au survol des éléments cliquables (pulse, glow, ring)
 - z-index: 999999 (toujours au-dessus de tout)
 - Désactivé sur mobile/tablette et si prefers-reduced-motion
 
-### 2. Cookie Banner RGPD/CNIL
+### 2. Cookie Banner RGPD/CNIL 100% Conforme ✅
 - **Fichier**: `components/ui/CookieBanner.tsx`
-- Conforme CNIL (boutons égaux, pas de dark pattern)
-- Styles inline (pas de dépendances Tailwind pour éviter les bugs)
-- z-index: 99999
-- `cursor: auto` pour afficher le curseur système sur le popup
-- localStorage key: `atum-cookie-consent`
-- Délai d'apparition: 1 seconde
+- Design égyptien (Eye of Horus, bordures dorées)
+- Traductions i18n intégrées (useTranslations)
+- Toggles pour cookies analytiques
+- **Conformité CNIL complète** :
+  - Responsable : ATUM (affiché)
+  - Lien vers mentions légales
+  - Durée : 13 mois (affichée + expiration auto)
+  - Google Analytics nommé explicitement
+  - Bouton "Gérer les cookies" dans le footer
 
-### 3. Traductions Cookies
-- **Fichiers**: `messages/fr.json`, `messages/en.json`
-- Section `cookies` avec toutes les traductions (non utilisées actuellement car composant simplifié)
+### 3. Google Analytics Conditionnel ✅
+- **Fichiers**: `lib/analytics.ts`, `components/analytics/GoogleAnalytics.tsx`
+- GA4 chargé uniquement si consentement analytics = true
+- Anonymize IP activé
+- Event `cookie-consent-update` pour mise à jour immédiate
 
----
-
-## Problèmes Résolus
-
-### Cookie Banner ne s'affichait pas
-- **Cause**: Imports complexes qui échouaient silencieusement
-- **Solution**: Simplification avec styles inline uniquement
-
-### Curseur invisible sur Cookie Banner
-- **Cause**: globals.css applique `cursor: none !important` partout
-- **Solution 1**: `cursor: auto` sur le container du cookie banner
-- **Solution 2**: z-index du curseur (999999) > cookie banner (99999)
-
-### Multiples URLs Vercel
-- **Explication**: Chaque déploiement génère une URL unique (preview)
-- **URL stable**: https://atumcom.vercel.app
+### 4. Droit de Retrait CNIL ✅
+- **Fichier**: `components/layout/Footer.tsx`
+- Bouton "Gérer les cookies" dans la section Entreprise
+- Supprime le consentement et recharge la page
 
 ---
 
-## Architecture Importante
+## Architecture Cookie Consent
 
 ```
-app/
-  [locale]/
-    layout.tsx      ← Intègre CookieBanner, CustomCursor, Header, Footer
-    page.tsx        ← Page d'accueil
+localStorage: 'atum-cookie-consent'
+{
+  essential: true,        // Toujours true
+  analytics: boolean,     // Choix utilisateur
+  timestamp: number,      // Date du consentement
+  version: "1.0"          // Pour invalidation future
+}
 
-components/
-  ui/
-    CookieBanner.tsx  ← Popup RGPD
-    CustomCursor.tsx  ← Œil d'Horus animé
-    Button.tsx        ← Boutons réutilisables
+lib/analytics.ts
+├── GA_MEASUREMENT_ID
+├── isConsentExpired()    // Vérifie les 13 mois
+├── getConsentStatus()    // Retourne analytics boolean
+├── pageview()            // Track pageview si consent
+├── event()               // Track event si consent
+└── notifyConsentChange() // Dispatch custom event
 
-  layout/
-    Header.tsx
-    Footer.tsx
-    SmoothScrollProvider.tsx  ← Lenis
-
-messages/
-  fr.json           ← Traductions françaises
-  en.json           ← Traductions anglaises
-
-app/globals.css     ← Design system, cursor: none global
+components/analytics/GoogleAnalytics.tsx
+└── Charge GA4 script si consentement analytics
 ```
 
 ---
 
-## Points d'Attention pour la Suite
+## Conformité CNIL - Checklist ✅
 
-1. **Le cookie banner utilise des styles inline** - Si on veut le rendre plus joli, il faudra réintégrer Tailwind avec précaution
-
-2. **Traductions cookies non utilisées** - Le composant actuel est hardcodé en français, les traductions dans messages/*.json sont disponibles mais pas intégrées
-
-3. **Middleware deprecated** - Next.js affiche un warning sur la convention "middleware" → "proxy"
-
-4. **Le curseur custom nécessite `cursor: none` global** - Si on retire cette règle, le curseur système réapparaîtra
+| Exigence | Statut | Implémentation |
+|----------|--------|----------------|
+| Boutons équivalents | ✅ | Accepter = Refuser même taille |
+| Personnalisation | ✅ | Bouton + toggles |
+| Identité responsable | ✅ | "Responsable : ATUM" |
+| Lien mentions légales | ✅ | Lien cliquable dynamique |
+| Durée conservation | ✅ | "13 mois" affiché |
+| Finalités précises | ✅ | "Google Analytics" nommé |
+| Droit de retrait | ✅ | Bouton footer |
+| Expiration auto | ✅ | isConsentExpired() |
+| Données anonymisées | ✅ | anonymize_ip: true |
 
 ---
 
-## Prochaines Étapes Possibles
+## Fichiers Clés
 
-- [ ] Réintégrer les traductions dans CookieBanner
-- [ ] Ajouter le bouton "Personnaliser" avec toggles pour cookies analytiques
-- [ ] Améliorer le design du cookie banner (cohérence avec le thème)
-- [ ] Ajouter Google Analytics conditionnel selon le consentement
+| Fichier | Rôle |
+|---------|------|
+| `components/ui/CookieBanner.tsx` | Banner RGPD complet |
+| `components/ui/CustomCursor.tsx` | Curseur Eye of Horus |
+| `components/analytics/GoogleAnalytics.tsx` | GA4 conditionnel |
+| `components/layout/Footer.tsx` | Contient "Gérer les cookies" |
+| `lib/analytics.ts` | Utilitaires GA4 + consent |
+| `messages/fr.json` | Traductions FR |
+| `messages/en.json` | Traductions EN |
+| `app/globals.css` | cursor: none global |
+
+---
+
+## Points d'Attention
+
+1. **Variable d'environnement GA4** : Ajouter `NEXT_PUBLIC_GA_ID=G-XXXXX` dans Vercel pour activer Google Analytics
+
+2. **Middleware deprecated** : Next.js affiche un warning "middleware" → "proxy"
+
+3. **Curseur custom** : Nécessite `cursor: none` global dans globals.css
+
+---
+
+## Pour la Prochaine Session
+
+- [ ] Configurer Google Analytics (créer propriété GA4, ajouter ID dans Vercel)
 - [ ] Tester le responsive sur différents devices
+- [ ] Améliorer la page mentions légales si besoin
+- [ ] Ajouter plus de contenu/projets
 
 ---
 
