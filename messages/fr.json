@@ -339,6 +339,8 @@
     "analytics": {
       "title": "Cookies analytiques",
       "description": "Ces cookies nous permettent de mesurer l'audience du site et d'améliorer son fonctionnement. Les données sont anonymisées."
-    }
+    },
+    "back": "← Retour",
+    "save": "Enregistrer mes choix"
   }
 }

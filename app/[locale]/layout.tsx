@@ -9,6 +9,7 @@ import { Footer } from '@/components/layout/Footer';
 import { SmoothScrollProvider } from '@/components/layout/SmoothScrollProvider';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { CookieBanner } from '@/components/ui/CookieBanner';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import '@/app/globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -103,6 +104,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="bg-black text-white antialiased">
+        <GoogleAnalytics />
         <CustomCursor />
         <NextIntlClientProvider messages={messages}>
           <SmoothScrollProvider>
