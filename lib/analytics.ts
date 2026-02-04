@@ -19,6 +19,13 @@ export interface CookieConsent {
 
 const COOKIE_CONSENT_KEY = 'atum-cookie-consent';
 
+// CNIL requires max 13 months retention
+const CONSENT_MAX_AGE_MS = 13 * 30 * 24 * 60 * 60 * 1000; // ~13 months
+
+export function isConsentExpired(consent: CookieConsent): boolean {
+  return Date.now() - consent.timestamp > CONSENT_MAX_AGE_MS;
+}
+
 export function getConsentStatus(): boolean {
   if (typeof window === 'undefined') return false;
 

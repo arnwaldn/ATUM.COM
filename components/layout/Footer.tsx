@@ -11,7 +11,13 @@ interface FooterProps {
 
 export function Footer({ locale }: FooterProps) {
   const t = useTranslations('footer');
+  const tCookies = useTranslations('cookies');
   const currentYear = new Date().getFullYear();
+
+  const handleManageCookies = () => {
+    localStorage.removeItem('atum-cookie-consent');
+    window.location.reload();
+  };
 
   const serviceLinks = [
     { href: `/${locale}/services#web`, label: t('sections.services.links.web') },
@@ -108,6 +114,12 @@ export function Footer({ locale }: FooterProps) {
                   {link.label}
                 </Link>
               ))}
+              <button
+                onClick={handleManageCookies}
+                className="block text-gray-400 text-sm hover:text-gold-500 transition-colors duration-200 text-left"
+              >
+                {tCookies('manage')}
+              </button>
             </nav>
           </div>
 

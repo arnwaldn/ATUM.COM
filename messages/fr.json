@@ -325,22 +325,25 @@
   },
   "cookies": {
     "title": "Gestion des cookies",
-    "description": "Nous utilisons des cookies pour assurer le fonctionnement du site (cookies essentiels) et, avec votre consentement, pour analyser notre trafic. Vous pouvez accepter ou refuser les cookies non essentiels.",
+    "description": "ATUM utilise des cookies essentiels pour le fonctionnement du site et, avec votre consentement, des cookies Google Analytics pour mesurer l'audience. Vos données sont anonymisées.",
     "accept": "Tout accepter",
     "reject": "Tout refuser",
     "settings": "Personnaliser",
-    "moreInfo": "Pour en savoir plus, consultez notre",
-    "privacyPolicy": "politique de confidentialité",
+    "moreInfo": "Pour en savoir plus, consultez nos",
+    "privacyPolicy": "mentions légales",
+    "duration": "Votre choix est conservé 13 mois.",
+    "controller": "Responsable : ATUM",
     "essential": {
       "title": "Cookies essentiels",
-      "description": "Ces cookies sont nécessaires au fonctionnement du site (session, préférences de langue, consentement cookies). Ils ne peuvent pas être désactivés.",
+      "description": "Nécessaires au fonctionnement du site (session, préférences de langue, consentement). Non désactivables.",
       "required": "Toujours actifs"
     },
     "analytics": {
-      "title": "Cookies analytiques",
-      "description": "Ces cookies nous permettent de mesurer l'audience du site et d'améliorer son fonctionnement. Les données sont anonymisées."
+      "title": "Cookies analytiques (Google Analytics)",
+      "description": "Permettent de mesurer l'audience du site de manière anonymisée pour améliorer nos services."
     },
     "back": "← Retour",
-    "save": "Enregistrer mes choix"
+    "save": "Enregistrer mes choix",
+    "manage": "Gérer les cookies"
   }
 }

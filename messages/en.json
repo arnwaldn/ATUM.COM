@@ -325,22 +325,25 @@
   },
   "cookies": {
     "title": "Cookie management",
-    "description": "We use cookies to ensure the site works properly (essential cookies) and, with your consent, to analyze our traffic. You can accept or reject non-essential cookies.",
+    "description": "ATUM uses essential cookies for site functionality and, with your consent, Google Analytics cookies to measure traffic. Your data is anonymized.",
     "accept": "Accept all",
     "reject": "Reject all",
     "settings": "Customize",
     "moreInfo": "For more information, see our",
-    "privacyPolicy": "privacy policy",
+    "privacyPolicy": "legal notice",
+    "duration": "Your choice is stored for 13 months.",
+    "controller": "Controller: ATUM",
     "essential": {
       "title": "Essential cookies",
-      "description": "These cookies are necessary for the site to function (session, language preferences, cookie consent). They cannot be disabled.",
+      "description": "Required for site functionality (session, language preferences, consent). Cannot be disabled.",
       "required": "Always active"
     },
     "analytics": {
-      "title": "Analytics cookies",
-      "description": "These cookies allow us to measure site traffic and improve its performance. Data is anonymized."
+      "title": "Analytics cookies (Google Analytics)",
+      "description": "Allow us to measure site traffic anonymously to improve our services."
     },
     "back": "← Back",
-    "save": "Save my choices"
+    "save": "Save my choices",
+    "manage": "Manage cookies"
   }
 }

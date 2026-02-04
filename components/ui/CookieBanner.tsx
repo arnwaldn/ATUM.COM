@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { notifyConsentChange, type CookieConsent } from '@/lib/analytics';
+import { useTranslations, useLocale } from 'next-intl';
+import { notifyConsentChange, isConsentExpired, type CookieConsent } from '@/lib/analytics';
 
 const COOKIE_CONSENT_KEY = 'atum-cookie-consent';
 const CONSENT_VERSION = '1.0';
@@ -108,6 +108,7 @@ function ToggleSwitch({
 
 export function CookieBanner() {
   const t = useTranslations('cookies');
+  const locale = useLocale();
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
@@ -122,10 +123,10 @@ export function CookieBanner() {
       return () => clearTimeout(timer);
     }
 
-    // Check if consent version is outdated
+    // Check if consent version is outdated or expired (CNIL: max 13 months)
     try {
       const parsed: CookieConsent = JSON.parse(savedConsent);
-      if (parsed.version !== CONSENT_VERSION) {
+      if (parsed.version !== CONSENT_VERSION || isConsentExpired(parsed)) {
         localStorage.removeItem(COOKIE_CONSENT_KEY);
         const timer = setTimeout(() => {
           setIsVisible(true);
@@ -206,12 +207,27 @@ export function CookieBanner() {
           >
             <EyeOfHorusIcon className="text-gold-500" />
           </div>
-          <div>
-            <h3 style={{ color: 'white', fontWeight: 'bold', fontSize: '18px', marginBottom: '8px' }}>
-              {t('title')}
-            </h3>
-            <p style={{ color: '#9ca3af', fontSize: '14px', lineHeight: '1.6' }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+              <h3 style={{ color: 'white', fontWeight: 'bold', fontSize: '18px', margin: 0 }}>
+                {t('title')}
+              </h3>
+              <span style={{ color: '#6b7280', fontSize: '12px' }}>
+                {t('controller')}
+              </span>
+            </div>
+            <p style={{ color: '#9ca3af', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
               {t('description')}
+            </p>
+            <p style={{ color: '#6b7280', fontSize: '12px', marginTop: '8px', margin: '8px 0 0 0' }}>
+              {t('moreInfo')}{' '}
+              <a
+                href={`/${locale}/mentions-legales`}
+                style={{ color: '#C9A30D', textDecoration: 'underline' }}
+              >
+                {t('privacyPolicy')}
+              </a>
+              . {t('duration')}
             </p>
           </div>
         </div>
