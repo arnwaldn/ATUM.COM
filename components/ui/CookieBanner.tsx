@@ -2,46 +2,64 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { Button } from './Button';
-import { X, Cookie } from 'lucide-react';
+import { X, Cookie, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const COOKIE_CONSENT_KEY = 'atum-cookie-consent';
+const COOKIE_CONSENT_DATE_KEY = 'atum-cookie-consent-date';
 
 type ConsentStatus = 'pending' | 'accepted' | 'rejected';
 
-export function CookieBanner() {
+interface CookieBannerProps {
+  locale?: string;
+}
+
+export function CookieBanner({ locale = 'fr' }: CookieBannerProps) {
   const t = useTranslations('cookies');
   const [status, setStatus] = useState<ConsentStatus>('pending');
   const [isVisible, setIsVisible] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     // Check if user has already made a choice
     const savedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (savedConsent) {
+    const consentDate = localStorage.getItem(COOKIE_CONSENT_DATE_KEY);
+
+    // Re-ask consent after 13 months (CNIL requirement)
+    if (savedConsent && consentDate) {
+      const thirteenMonthsAgo = Date.now() - (13 * 30 * 24 * 60 * 60 * 1000);
+      if (parseInt(consentDate) < thirteenMonthsAgo) {
+        // Consent expired, ask again
+        localStorage.removeItem(COOKIE_CONSENT_KEY);
+        localStorage.removeItem(COOKIE_CONSENT_DATE_KEY);
+        const timer = setTimeout(() => setIsVisible(true), 1000);
+        return () => clearTimeout(timer);
+      }
       setStatus(savedConsent as ConsentStatus);
-    } else {
-      // Show banner after a short delay for better UX
-      const timer = setTimeout(() => setIsVisible(true), 1500);
+    } else if (!savedConsent) {
+      // Show banner after a short delay
+      const timer = setTimeout(() => setIsVisible(true), 1000);
       return () => clearTimeout(timer);
     }
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
-    setStatus('accepted');
+  const saveConsent = (consent: ConsentStatus) => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, consent);
+    localStorage.setItem(COOKIE_CONSENT_DATE_KEY, Date.now().toString());
+    setStatus(consent);
     setIsVisible(false);
+
+    // If rejected, we could disable analytics here
+    if (consent === 'rejected') {
+      // Disable any analytics/tracking cookies
+      // window.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+    }
   };
 
-  const handleReject = () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
-    setStatus('rejected');
-    setIsVisible(false);
-  };
-
-  const handleClose = () => {
-    setIsVisible(false);
-  };
+  const handleAccept = () => saveConsent('accepted');
+  const handleReject = () => saveConsent('rejected');
 
   // Don't render if consent already given
   if (status !== 'pending' || !isVisible) return null;
@@ -64,51 +82,98 @@ export function CookieBanner() {
           'shadow-2xl shadow-black/50'
         )}
       >
-        {/* Close button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 p-2 text-gray-500 hover:text-white transition-colors"
-          aria-label="Close"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-          {/* Icon */}
-          <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center">
-            <Cookie className="w-6 h-6 text-gold-500" />
+        <div className="flex flex-col gap-6">
+          {/* Header */}
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center">
+              <Cookie className="w-6 h-6 text-gold-500" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-white font-display font-bold text-lg mb-2">
+                {t('title')}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {t('description')}
+              </p>
+            </div>
           </div>
 
-          {/* Content */}
-          <div className="flex-1">
-            <h3 className="text-white font-display font-bold text-lg mb-2">
-              {t('title')}
-            </h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {t('description')}
-            </p>
-          </div>
+          {/* Details (expandable) */}
+          {showDetails && (
+            <div className="bg-gray-800/50 rounded-xl p-4 space-y-4">
+              <div>
+                <h4 className="text-white font-medium text-sm mb-2">{t('essential.title')}</h4>
+                <p className="text-gray-400 text-xs">{t('essential.description')}</p>
+                <span className="inline-block mt-2 px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">
+                  {t('essential.required')}
+                </span>
+              </div>
+              <div>
+                <h4 className="text-white font-medium text-sm mb-2">{t('analytics.title')}</h4>
+                <p className="text-gray-400 text-xs">{t('analytics.description')}</p>
+              </div>
+            </div>
+          )}
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleReject}
-              className="w-full sm:w-auto"
+          {/* Privacy Policy Link */}
+          <p className="text-gray-500 text-xs">
+            {t('moreInfo')}{' '}
+            <Link
+              href={`/${locale}/mentions-legales`}
+              className="text-gold-500 hover:text-gold-400 underline"
             >
-              {t('reject')}
-            </Button>
-            <Button
-              size="sm"
-              onClick={handleAccept}
-              className="w-full sm:w-auto"
+              {t('privacyPolicy')}
+            </Link>
+          </p>
+
+          {/* Buttons - CNIL compliant: equal visibility */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              onClick={() => setShowDetails(!showDetails)}
+              className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm text-gray-400 hover:text-white transition-colors"
             >
-              {t('accept')}
-            </Button>
+              <Settings className="w-4 h-4" />
+              {t('settings')}
+            </button>
+            <div className="flex-1 flex flex-col sm:flex-row gap-3 sm:justify-end">
+              {/* CNIL: Both buttons must have equal prominence */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleReject}
+                className="w-full sm:w-auto"
+              >
+                {t('reject')}
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleAccept}
+                className="w-full sm:w-auto"
+              >
+                {t('accept')}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+// Export a function to reset consent (for settings page)
+export function resetCookieConsent() {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem(COOKIE_CONSENT_KEY);
+    localStorage.removeItem(COOKIE_CONSENT_DATE_KEY);
+    window.location.reload();
+  }
+}
+
+// Export a function to get current consent status
+export function getCookieConsent(): ConsentStatus | null {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem(COOKIE_CONSENT_KEY) as ConsentStatus | null;
+  }
+  return null;
 }
