@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "title": "ATUM | Agence Digitale Premium",
+    "description": "ATUM transforme vos idées en expériences digitales exceptionnelles. Développement web, applications mobiles, intelligence artificielle et automatisation.",
+    "keywords": "agence digitale, développement web, applications mobiles, IA, intelligence artificielle, automatisation, design UI/UX, Paris"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "projects": "Réalisations",
+    "about": "Agence",
+    "contact": "Contact",
+    "cta": "Démarrer un projet"
+  },
+  "hero": {
+    "badge": "Agence Digitale Premium",
+    "title": {
+      "line1": "Nous créons des",
+      "highlight": "expériences digitales",
+      "line2": "exceptionnelles"
+    },
+    "subtitle": "ATUM transforme vos visions en réalités numériques. Du concept au déploiement, nous donnons vie à vos projets les plus ambitieux avec excellence et innovation.",
+    "cta": {
+      "primary": "Démarrer votre projet",
+      "secondary": "Découvrir nos services"
+    },
+    "scrollIndicator": "Défiler pour explorer"
+  },
+  "services": {
+    "badge": "Nos Expertises",
+    "title": "Des solutions sur mesure pour chaque défi",
+    "subtitle": "Notre équipe pluridisciplinaire maîtrise les technologies les plus avancées pour transformer vos ambitions en succès digitaux.",
+    "items": {
+      "web": {
+        "title": "Développement Web",
+        "description": "Sites vitrines, applications web complexes, e-commerce et plateformes SaaS. Des solutions performantes et évolutives avec Next.js, React et les dernières technologies.",
+        "features": ["Next.js & React", "E-commerce", "Applications SaaS", "Performance optimisée"]
+      },
+      "mobile": {
+        "title": "Applications Mobiles",
+        "description": "Applications natives et cross-platform pour iOS et Android. Expériences utilisateurs fluides et intuitives avec React Native, Flutter et Swift.",
+        "features": ["iOS & Android", "React Native", "Flutter", "Expériences natives"]
+      },
+      "ai": {
+        "title": "Intelligence Artificielle",
+        "description": "Intégration d'IA générative, chatbots intelligents, automatisation cognitive et systèmes de recommandation personnalisés.",
+        "features": ["LLM & GPT", "Chatbots IA", "Vision par ordinateur", "RAG Systems"]
+      },
+      "automation": {
+        "title": "Automatisation",
+        "description": "Optimisez vos processus avec des solutions d'automatisation sur mesure. Workflows intelligents, intégrations API et scripts personnalisés.",
+        "features": ["Workflows automatisés", "Intégrations API", "Scripts sur mesure", "Productivité +300%"]
+      },
+      "design": {
+        "title": "Design UI/UX",
+        "description": "Interfaces élégantes et expériences utilisateurs mémorables. Design systems, prototypage et identité visuelle digitale.",
+        "features": ["Design Systems", "Prototypage Figma", "Animation GSAP", "Accessibilité"]
+      },
+      "consulting": {
+        "title": "Conseil Technique",
+        "description": "Accompagnement stratégique pour vos projets digitaux. Audit technique, architecture logicielle et roadmap technologique.",
+        "features": ["Audit technique", "Architecture", "Roadmap", "Formation équipes"]
+      }
+    },
+    "cta": "Voir tous nos services"
+  },
+  "projects": {
+    "badge": "Nos Réalisations",
+    "title": "Projets qui font la différence",
+    "subtitle": "Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs avec des solutions digitales innovantes.",
+    "viewProject": "Voir le projet",
+    "viewAll": "Voir toutes nos réalisations",
+    "categories": {
+      "all": "Tous",
+      "web": "Web",
+      "mobile": "Mobile",
+      "ai": "IA",
+      "design": "Design"
+    }
+  },
+  "stats": {
+    "projects": {
+      "value": "50+",
+      "label": "Projets livrés"
+    },
+    "clients": {
+      "value": "35+",
+      "label": "Clients satisfaits"
+    },
+    "experience": {
+      "value": "5+",
+      "label": "Années d'expertise"
+    },
+    "technologies": {
+      "value": "25+",
+      "label": "Technologies maîtrisées"
+    }
+  },
+  "techStack": {
+    "badge": "Stack Technique",
+    "title": "Technologies de pointe",
+    "subtitle": "Nous utilisons les meilleures technologies pour créer des solutions performantes, scalables et maintenables."
+  },
+  "about": {
+    "badge": "Notre Agence",
+    "title": "L'excellence au service de votre ambition",
+    "subtitle": "ATUM, c'est une équipe passionnée qui conjugue créativité, expertise technique et vision stratégique pour donner vie à des projets digitaux d'exception.",
+    "story": {
+      "title": "Notre Histoire",
+      "content": "Fondée avec la conviction que le digital peut transformer les entreprises, ATUM accompagne startups et grands comptes dans leur évolution numérique. Notre nom, inspiré du dieu créateur égyptien, symbolise notre mission : donner naissance à des projets uniques et impactants."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "items": {
+        "excellence": {
+          "title": "Excellence",
+          "description": "Chaque ligne de code, chaque pixel est conçu avec la plus grande attention aux détails."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Nous explorons constamment les nouvelles technologies pour offrir des solutions avant-gardistes."
+        },
+        "collaboration": {
+          "title": "Collaboration",
+          "description": "Votre succès est notre priorité. Nous travaillons main dans la main avec nos clients."
+        },
+        "transparency": {
+          "title": "Transparence",
+          "description": "Communication claire, suivi régulier et visibilité totale sur l'avancement de vos projets."
+        },
+        "reliability": {
+          "title": "Fiabilité",
+          "description": "Respect des délais, qualité constante et support réactif pour une relation de confiance durable."
+        }
+      }
+    },
+    "method": {
+      "title": "Notre Méthodologie",
+      "steps": {
+        "discovery": {
+          "title": "Découverte",
+          "description": "Analyse approfondie de vos besoins, objectifs et contraintes pour définir une vision claire."
+        },
+        "design": {
+          "title": "Conception",
+          "description": "Design UX/UI et architecture technique pour une expérience utilisateur optimale."
+        },
+        "development": {
+          "title": "Développement",
+          "description": "Développement agile avec sprints itératifs et livraisons régulières."
+        },
+        "testing": {
+          "title": "Tests & QA",
+          "description": "Tests rigoureux pour garantir qualité, performance et sécurité."
+        },
+        "launch": {
+          "title": "Lancement",
+          "description": "Déploiement optimisé et accompagnement pour un lancement réussi."
+        },
+        "support": {
+          "title": "Support",
+          "description": "Maintenance, évolutions et support technique continu."
+        }
+      }
+    },
+    "cta": "En savoir plus sur ATUM"
+  },
+  "cta": {
+    "badge": "Prêt à démarrer ?",
+    "title": "Transformons ensemble votre vision en réalité",
+    "subtitle": "Discutons de votre projet et découvrez comment ATUM peut vous accompagner vers le succès digital.",
+    "button": "Contactez-nous",
+    "features": {
+      "consultation": "Consultation gratuite",
+      "response": "Réponse sous 24h",
+      "quote": "Devis personnalisé"
+    }
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Parlons de votre projet",
+    "subtitle": "Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous vous répondons sous 24 heures.",
+    "info": {
+      "title": "Informations de contact",
+      "email": {
+        "label": "Email",
+        "value": "contact@atum.dev"
+      },
+      "website": {
+        "label": "Site web",
+        "value": "www.atum.dev"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "value": "linkedin.com/company/atum-dev"
+      },
+      "availability": {
+        "title": "Disponibilité",
+        "description": "Nous sommes disponibles du lundi au vendredi, de 9h à 18h. Réponse garantie sous 24h."
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Nom complet",
+        "placeholder": "Jean Dupont"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "jean@exemple.com"
+      },
+      "company": {
+        "label": "Entreprise",
+        "placeholder": "Nom de votre entreprise (optionnel)"
+      },
+      "projectType": {
+        "label": "Type de projet",
+        "placeholder": "Sélectionnez un type de projet"
+      },
+      "budget": {
+        "label": "Budget estimé",
+        "placeholder": "Sélectionnez une fourchette (optionnel)"
+      },
+      "message": {
+        "label": "Votre message",
+        "placeholder": "Décrivez votre projet, vos besoins et vos objectifs..."
+      },
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours...",
+      "success": {
+        "title": "Message envoyé !",
+        "description": "Merci pour votre message. Nous vous répondrons dans les plus brefs délais."
+      },
+      "error": {
+        "title": "Erreur",
+        "description": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement."
+      }
+    },
+    "projectTypes": {
+      "web": "Développement Web",
+      "mobile": "Application Mobile",
+      "ai": "Intelligence Artificielle",
+      "automation": "Automatisation",
+      "design": "Design UI/UX",
+      "consulting": "Conseil Technique",
+      "other": "Autre"
+    },
+    "budgetRanges": {
+      "5k-15k": "5 000 € - 15 000 €",
+      "15k-30k": "15 000 € - 30 000 €",
+      "30k-50k": "30 000 € - 50 000 €",
+      "50k+": "50 000 € +",
+      "undefined": "À définir"
+    }
+  },
+  "footer": {
+    "description": "ATUM transforme vos idées en expériences digitales exceptionnelles. Du concept au déploiement, nous donnons vie à vos projets les plus ambitieux.",
+    "sections": {
+      "services": {
+        "title": "Services",
+        "links": {
+          "web": "Développement Web",
+          "mobile": "Applications Mobiles",
+          "ai": "Intelligence Artificielle",
+          "automation": "Automatisation",
+          "design": "Design UI/UX",
+          "consulting": "Conseil Technique"
+        }
+      },
+      "company": {
+        "title": "Entreprise",
+        "links": {
+          "about": "À propos",
+          "projects": "Réalisations",
+          "contact": "Contact",
+          "legal": "Mentions légales"
+        }
+      },
+      "social": {
+        "title": "Suivez-nous"
+      }
+    },
+    "copyright": "© {year} ATUM. Tous droits réservés.",
+    "madeWith": "Fait avec passion à Paris"
+  },
+  "legal": {
+    "title": "Mentions Légales",
+    "subtitle": "Informations légales et conditions d'utilisation du site ATUM.",
+    "sections": {
+      "editor": {
+        "title": "Éditeur du site",
+        "content": "ATUM - Agence Digitale\nEmail : contact@atum.dev\nSite web : www.atum.dev"
+      },
+      "hosting": {
+        "title": "Hébergement",
+        "content": "Ce site est hébergé par Vercel Inc.\n440 N Barranca Ave #4133\nCovina, CA 91723\nÉtats-Unis"
+      },
+      "intellectual": {
+        "title": "Propriété intellectuelle",
+        "content": "L'ensemble des contenus (textes, images, vidéos, logos, icônes) présents sur ce site sont protégés par le droit d'auteur. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, est strictement interdite sans autorisation préalable."
+      },
+      "data": {
+        "title": "Protection des données",
+        "content": "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, contactez-nous à contact@atum.dev."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Ce site utilise des cookies pour améliorer votre expérience de navigation. En continuant à naviguer sur ce site, vous acceptez l'utilisation de cookies."
+      }
+    }
+  },
+  "404": {
+    "title": "Page non trouvée",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "cta": "Retour à l'accueil"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "getStarted": "Commencer",
+    "viewAll": "Voir tout",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "close": "Fermer",
+    "menu": "Menu",
+    "back": "Retour"
+  }
+}

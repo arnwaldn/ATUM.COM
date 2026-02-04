@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Documentation & source files (not for deployment)
+*.pdf
+*.mp4
+01-ULTRACREA-EXECUTION-PLAN.md
+02-BRIEF-GRAPHIC-DESIGNER.md
+
+# Source images (raw)
+app smartphone.png
+cervo.png
+dashboard.png
+devloppement web.png
+e comerce.png
+rouage.png
+smartphone.png
+technical consulting.png
+ui ux design.png

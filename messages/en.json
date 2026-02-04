@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "title": "ATUM | Premium Digital Agency",
+    "description": "ATUM transforms your ideas into exceptional digital experiences. Web development, mobile applications, artificial intelligence and automation.",
+    "keywords": "digital agency, web development, mobile applications, AI, artificial intelligence, automation, UI/UX design, Paris"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Start a project"
+  },
+  "hero": {
+    "badge": "Premium Digital Agency",
+    "title": {
+      "line1": "We create",
+      "highlight": "exceptional digital",
+      "line2": "experiences"
+    },
+    "subtitle": "ATUM transforms your visions into digital realities. From concept to deployment, we bring your most ambitious projects to life with excellence and innovation.",
+    "cta": {
+      "primary": "Start your project",
+      "secondary": "Discover our services"
+    },
+    "scrollIndicator": "Scroll to explore"
+  },
+  "services": {
+    "badge": "Our Expertise",
+    "title": "Tailored solutions for every challenge",
+    "subtitle": "Our multidisciplinary team masters the most advanced technologies to transform your ambitions into digital success.",
+    "items": {
+      "web": {
+        "title": "Web Development",
+        "description": "Showcase sites, complex web applications, e-commerce and SaaS platforms. Performant and scalable solutions with Next.js, React and the latest technologies.",
+        "features": ["Next.js & React", "E-commerce", "SaaS Applications", "Optimized Performance"]
+      },
+      "mobile": {
+        "title": "Mobile Applications",
+        "description": "Native and cross-platform applications for iOS and Android. Smooth and intuitive user experiences with React Native, Flutter and Swift.",
+        "features": ["iOS & Android", "React Native", "Flutter", "Native Experiences"]
+      },
+      "ai": {
+        "title": "Artificial Intelligence",
+        "description": "Integration of generative AI, intelligent chatbots, cognitive automation and personalized recommendation systems.",
+        "features": ["LLM & GPT", "AI Chatbots", "Computer Vision", "RAG Systems"]
+      },
+      "automation": {
+        "title": "Automation",
+        "description": "Optimize your processes with custom automation solutions. Intelligent workflows, API integrations and custom scripts.",
+        "features": ["Automated Workflows", "API Integrations", "Custom Scripts", "Productivity +300%"]
+      },
+      "design": {
+        "title": "UI/UX Design",
+        "description": "Elegant interfaces and memorable user experiences. Design systems, prototyping and digital visual identity.",
+        "features": ["Design Systems", "Figma Prototyping", "GSAP Animation", "Accessibility"]
+      },
+      "consulting": {
+        "title": "Technical Consulting",
+        "description": "Strategic guidance for your digital projects. Technical audit, software architecture and technology roadmap.",
+        "features": ["Technical Audit", "Architecture", "Roadmap", "Team Training"]
+      }
+    },
+    "cta": "View all services"
+  },
+  "projects": {
+    "badge": "Our Projects",
+    "title": "Projects that make a difference",
+    "subtitle": "Discover how we have helped our clients achieve their goals with innovative digital solutions.",
+    "viewProject": "View project",
+    "viewAll": "View all projects",
+    "categories": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "ai": "AI",
+      "design": "Design"
+    }
+  },
+  "stats": {
+    "projects": {
+      "value": "50+",
+      "label": "Projects delivered"
+    },
+    "clients": {
+      "value": "35+",
+      "label": "Satisfied clients"
+    },
+    "experience": {
+      "value": "5+",
+      "label": "Years of expertise"
+    },
+    "technologies": {
+      "value": "25+",
+      "label": "Technologies mastered"
+    }
+  },
+  "techStack": {
+    "badge": "Tech Stack",
+    "title": "Cutting-edge technologies",
+    "subtitle": "We use the best technologies to create performant, scalable and maintainable solutions."
+  },
+  "about": {
+    "badge": "Our Agency",
+    "title": "Excellence at the service of your ambition",
+    "subtitle": "ATUM is a passionate team that combines creativity, technical expertise and strategic vision to bring exceptional digital projects to life.",
+    "story": {
+      "title": "Our Story",
+      "content": "Founded with the conviction that digital can transform businesses, ATUM supports startups and large companies in their digital evolution. Our name, inspired by the Egyptian creator god, symbolizes our mission: to give birth to unique and impactful projects."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": {
+        "excellence": {
+          "title": "Excellence",
+          "description": "Every line of code, every pixel is designed with the greatest attention to detail."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We constantly explore new technologies to offer cutting-edge solutions."
+        },
+        "collaboration": {
+          "title": "Collaboration",
+          "description": "Your success is our priority. We work hand in hand with our clients."
+        },
+        "transparency": {
+          "title": "Transparency",
+          "description": "Clear communication, regular follow-up and full visibility on your projects' progress."
+        },
+        "reliability": {
+          "title": "Reliability",
+          "description": "Deadline respect, consistent quality and reactive support for a lasting relationship of trust."
+        }
+      }
+    },
+    "method": {
+      "title": "Our Methodology",
+      "steps": {
+        "discovery": {
+          "title": "Discovery",
+          "description": "In-depth analysis of your needs, objectives and constraints to define a clear vision."
+        },
+        "design": {
+          "title": "Design",
+          "description": "UX/UI design and technical architecture for an optimal user experience."
+        },
+        "development": {
+          "title": "Development",
+          "description": "Agile development with iterative sprints and regular deliveries."
+        },
+        "testing": {
+          "title": "Testing & QA",
+          "description": "Rigorous testing to ensure quality, performance and security."
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "Optimized deployment and support for a successful launch."
+        },
+        "support": {
+          "title": "Support",
+          "description": "Maintenance, evolutions and continuous technical support."
+        }
+      }
+    },
+    "cta": "Learn more about ATUM"
+  },
+  "cta": {
+    "badge": "Ready to start?",
+    "title": "Let's transform your vision into reality together",
+    "subtitle": "Let's discuss your project and discover how ATUM can support you towards digital success.",
+    "button": "Contact us",
+    "features": {
+      "consultation": "Free consultation",
+      "response": "Response within 24h",
+      "quote": "Personalized quote"
+    }
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's talk about your project",
+    "subtitle": "Fill out the form below or contact us directly. We will respond within 24 hours.",
+    "info": {
+      "title": "Contact Information",
+      "email": {
+        "label": "Email",
+        "value": "contact@atum.dev"
+      },
+      "website": {
+        "label": "Website",
+        "value": "www.atum.dev"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "value": "linkedin.com/company/atum-dev"
+      },
+      "availability": {
+        "title": "Availability",
+        "description": "We are available Monday to Friday, 9am to 6pm. Response guaranteed within 24 hours."
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Full name",
+        "placeholder": "John Doe"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "john@example.com"
+      },
+      "company": {
+        "label": "Company",
+        "placeholder": "Your company name (optional)"
+      },
+      "projectType": {
+        "label": "Project type",
+        "placeholder": "Select a project type"
+      },
+      "budget": {
+        "label": "Estimated budget",
+        "placeholder": "Select a range (optional)"
+      },
+      "message": {
+        "label": "Your message",
+        "placeholder": "Describe your project, needs and objectives..."
+      },
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success": {
+        "title": "Message sent!",
+        "description": "Thank you for your message. We will respond as soon as possible."
+      },
+      "error": {
+        "title": "Error",
+        "description": "An error occurred. Please try again or contact us directly."
+      }
+    },
+    "projectTypes": {
+      "web": "Web Development",
+      "mobile": "Mobile Application",
+      "ai": "Artificial Intelligence",
+      "automation": "Automation",
+      "design": "UI/UX Design",
+      "consulting": "Technical Consulting",
+      "other": "Other"
+    },
+    "budgetRanges": {
+      "5k-15k": "€5,000 - €15,000",
+      "15k-30k": "€15,000 - €30,000",
+      "30k-50k": "€30,000 - €50,000",
+      "50k+": "€50,000 +",
+      "undefined": "To be defined"
+    }
+  },
+  "footer": {
+    "description": "ATUM transforms your ideas into exceptional digital experiences. From concept to deployment, we bring your most ambitious projects to life.",
+    "sections": {
+      "services": {
+        "title": "Services",
+        "links": {
+          "web": "Web Development",
+          "mobile": "Mobile Applications",
+          "ai": "Artificial Intelligence",
+          "automation": "Automation",
+          "design": "UI/UX Design",
+          "consulting": "Technical Consulting"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About",
+          "projects": "Projects",
+          "contact": "Contact",
+          "legal": "Legal Notice"
+        }
+      },
+      "social": {
+        "title": "Follow us"
+      }
+    },
+    "copyright": "© {year} ATUM. All rights reserved.",
+    "madeWith": "Made with passion in Paris"
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "subtitle": "Legal information and terms of use for the ATUM website.",
+    "sections": {
+      "editor": {
+        "title": "Site Editor",
+        "content": "ATUM - Digital Agency\nEmail: contact@atum.dev\nWebsite: www.atum.dev"
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "This site is hosted by Vercel Inc.\n440 N Barranca Ave #4133\nCovina, CA 91723\nUnited States"
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "content": "All content (texts, images, videos, logos, icons) on this site is protected by copyright. Any reproduction, representation, modification or adaptation, in whole or in part, is strictly prohibited without prior authorization."
+      },
+      "data": {
+        "title": "Data Protection",
+        "content": "In accordance with the General Data Protection Regulation (GDPR), you have the right to access, rectify and delete your personal data. To exercise this right, contact us at contact@atum.dev."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "This site uses cookies to improve your browsing experience. By continuing to browse this site, you accept the use of cookies."
+      }
+    }
+  },
+  "404": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "getStarted": "Get started",
+    "viewAll": "View all",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "close": "Close",
+    "menu": "Menu",
+    "back": "Back"
+  }
+}

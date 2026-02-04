@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ATUM Website — Projet Complet
 
-## Getting Started
+## Vue d'ensemble
 
-First, run the development server:
+Ce dossier contient tous les documents nécessaires pour la refonte complète du site web de l'agence ATUM.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Structure du projet
+
+```
+ATUM-WEBSITE-PROJECT/
+├── 01-ULTRACREA-EXECUTION-PLAN.md    # Plan d'exécution pour Claude Code
+├── 02-BRIEF-GRAPHIC-DESIGNER.md       # Brief pour création graphique
+├── documents/
+│   ├── ATUM-Documentation-Direction.pdf  # Doc interne direction
+│   ├── ATUM-Presentation-Client.pdf      # Présentation commerciale
+│   └── ATUM-Devis-Client.pdf             # Devis type
+└── README.md                          # Ce fichier
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Documents
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Plan d'exécution UltraCrea
+**Fichier:** `01-ULTRACREA-EXECUTION-PLAN.md`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Document principal à transmettre à Claude Code UltraCrea pour l'exécution du projet.
 
-## Learn More
+Contient :
+- Architecture technique complète
+- Design system (couleurs, typographie, spacing)
+- Configuration GSAP et animations
+- Structure des pages et sections
+- Composants principaux (code TypeScript)
+- Internationalisation FR/EN
+- API routes
+- SEO et performance
+- Checklist déploiement
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Brief Graphic Designer
+**Fichier:** `02-BRIEF-GRAPHIC-DESIGNER.md`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Brief complet pour la création des assets graphiques.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contient :
+- Identité de marque
+- Direction artistique
+- Palette couleurs détaillée
+- Typographie
+- Iconographie
+- Assets à produire
+- Maquettes UI requises
+- Principes d'animation
 
-## Deploy on Vercel
+### 3. Documentation Direction
+**Fichier:** `documents/ATUM-Documentation-Direction.pdf`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Document interne pour la direction de l'agence.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contient :
+- Résumé exécutif
+- Contexte et objectifs
+- Périmètre du projet
+- Architecture technique
+- Planning et ressources
+- Budget et ROI
+- Risques et mitigation
+- Recommandations
+
+### 4. Présentation Client
+**Fichier:** `documents/ATUM-Presentation-Client.pdf`
+
+Document commercial à partager avec prospects et clients.
+
+Contient :
+- Présentation de l'agence
+- Valeurs
+- Services et expertises
+- Méthode de travail
+- Technologies maîtrisées
+- Coordonnées
+
+### 5. Devis Client
+**Fichier:** `documents/ATUM-Devis-Client.pdf`
+
+Modèle de devis pour projets similaires.
+
+Contient :
+- Détail des prestations
+- Tarification
+- Options complémentaires
+- Conditions de paiement
+
+## Utilisation
+
+### Pour lancer le développement
+
+1. Ouvrir Claude Code avec le système UltraCrea
+2. Transmettre le fichier `01-ULTRACREA-EXECUTION-PLAN.md`
+3. Lancer l'exécution automatique
+
+### Pour les assets graphiques
+
+1. Transmettre le fichier `02-BRIEF-GRAPHIC-DESIGNER.md` au Graphic Designer
+2. Valider les maquettes Figma
+3. Exporter les assets optimisés
+
+### Pour la direction
+
+1. Revoir `documents/ATUM-Documentation-Direction.pdf`
+2. Valider le périmètre et budget
+3. Donner le GO pour lancement
+
+## Spécifications techniques
+
+| Élément | Valeur |
+|---------|--------|
+| Framework | Next.js 14 (App Router) |
+| Langage | TypeScript (strict) |
+| Styling | Tailwind CSS 3.4 |
+| Animations | GSAP 3.12 + ScrollTrigger |
+| i18n | next-intl (FR/EN) |
+| Hosting | Vercel |
+| Estimation | 3-4 jours |
+
+## Contacts
+
+- Projet : ATUM Website Redesign
+- Agence : ATUM (Cyber ATUM)
+- Système : Claude Code UltraCrea
+
+---
+
+*Projet généré par l'orchestrateur Cyber ATUM Skills*
+*Version 1.0 — Janvier 2025*
