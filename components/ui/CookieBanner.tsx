@@ -21,8 +21,16 @@ export function CookieBanner({ locale = 'fr' }: CookieBannerProps) {
   const [status, setStatus] = useState<ConsentStatus>('pending');
   const [isVisible, setIsVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Ensure component is mounted (client-side only)
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
+    if (!mounted) return;
+
     // Check if user has already made a choice
     const savedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
     const consentDate = localStorage.getItem(COOKIE_CONSENT_DATE_KEY);
@@ -38,12 +46,12 @@ export function CookieBanner({ locale = 'fr' }: CookieBannerProps) {
         return () => clearTimeout(timer);
       }
       setStatus(savedConsent as ConsentStatus);
-    } else if (!savedConsent) {
+    } else {
       // Show banner after a short delay
       const timer = setTimeout(() => setIsVisible(true), 1000);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [mounted]);
 
   const saveConsent = (consent: ConsentStatus) => {
     localStorage.setItem(COOKIE_CONSENT_KEY, consent);
@@ -61,8 +69,8 @@ export function CookieBanner({ locale = 'fr' }: CookieBannerProps) {
   const handleAccept = () => saveConsent('accepted');
   const handleReject = () => saveConsent('rejected');
 
-  // Don't render if consent already given
-  if (status !== 'pending' || !isVisible) return null;
+  // Don't render if not mounted, consent already given, or not visible yet
+  if (!mounted || status !== 'pending' || !isVisible) return null;
 
   return (
     <div
