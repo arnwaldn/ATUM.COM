@@ -1,21 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Button } from './Button';
-import { Cookie, Settings } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 const COOKIE_CONSENT_KEY = 'atum-cookie-consent';
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
-    // Only run on client
+    // Check if already consented
     const savedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
-
     if (!savedConsent) {
       // Show banner after 1 second
       const timer = setTimeout(() => {
@@ -39,77 +33,66 @@ export function CookieBanner() {
 
   return (
     <div
-      className={cn(
-        'fixed bottom-0 left-0 right-0 z-[9999]',
-        'p-4 md:p-6'
-      )}
+      id="cookie-banner"
+      style={{
+        position: 'fixed',
+        bottom: '20px',
+        left: '20px',
+        right: '20px',
+        zIndex: 99999,
+        display: 'flex',
+        justifyContent: 'center',
+      }}
     >
       <div
-        className={cn(
-          'max-w-4xl mx-auto',
-          'bg-gray-900 border border-gray-700 rounded-2xl',
-          'p-6 md:p-8',
-          'shadow-2xl'
-        )}
+        style={{
+          maxWidth: '800px',
+          width: '100%',
+          background: '#1f2937',
+          border: '1px solid #374151',
+          borderRadius: '16px',
+          padding: '24px',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        }}
       >
-        <div className="flex flex-col gap-6">
-          {/* Header */}
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center">
-              <Cookie className="w-6 h-6 text-gold-500" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-white font-bold text-lg mb-2">
-                Gestion des cookies
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Nous utilisons des cookies pour assurer le fonctionnement du site et améliorer votre expérience.
-              </p>
-            </div>
-          </div>
-
-          {/* Details */}
-          {showDetails && (
-            <div className="bg-gray-800/50 rounded-xl p-4 space-y-3">
-              <div>
-                <h4 className="text-white font-medium text-sm mb-1">Cookies essentiels</h4>
-                <p className="text-gray-400 text-xs">Nécessaires au fonctionnement du site.</p>
-              </div>
-              <div>
-                <h4 className="text-white font-medium text-sm mb-1">Cookies analytiques</h4>
-                <p className="text-gray-400 text-xs">Pour mesurer l'audience (anonymisé).</p>
-              </div>
-            </div>
-          )}
-
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <button
-              onClick={() => setShowDetails(!showDetails)}
-              className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm text-gray-400 hover:text-white transition-colors"
-            >
-              <Settings className="w-4 h-4" />
-              Personnaliser
-            </button>
-            <div className="flex-1 flex flex-col sm:flex-row gap-3 sm:justify-end">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleReject}
-                className="w-full sm:w-auto"
-              >
-                Tout refuser
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleAccept}
-                className="w-full sm:w-auto"
-              >
-                Tout accepter
-              </Button>
-            </div>
-          </div>
+        <div style={{ marginBottom: '16px' }}>
+          <h3 style={{ color: 'white', fontWeight: 'bold', fontSize: '18px', marginBottom: '8px' }}>
+            🍪 Gestion des cookies
+          </h3>
+          <p style={{ color: '#9ca3af', fontSize: '14px', lineHeight: '1.5' }}>
+            Nous utilisons des cookies pour assurer le fonctionnement du site et améliorer votre expérience.
+          </p>
+        </div>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <button
+            onClick={handleReject}
+            style={{
+              padding: '10px 20px',
+              background: 'transparent',
+              border: '1px solid #6b7280',
+              borderRadius: '8px',
+              color: 'white',
+              cursor: 'pointer',
+              fontSize: '14px',
+            }}
+          >
+            Tout refuser
+          </button>
+          <button
+            onClick={handleAccept}
+            style={{
+              padding: '10px 20px',
+              background: '#d4af37',
+              border: 'none',
+              borderRadius: '8px',
+              color: '#000',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontSize: '14px',
+            }}
+          >
+            Tout accepter
+          </button>
         </div>
       </div>
     </div>
