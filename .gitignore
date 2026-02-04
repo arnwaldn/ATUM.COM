@@ -56,3 +56,6 @@ rouage.png
 smartphone.png
 technical consulting.png
 ui ux design.png
+
+.vercel
+.env*.local

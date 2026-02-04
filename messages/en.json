@@ -322,5 +322,12 @@
     "close": "Close",
     "menu": "Menu",
     "back": "Back"
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "This site uses cookies to improve your browsing experience, analyze traffic and personalize content. By continuing to browse, you accept our use of cookies in accordance with our privacy policy.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "settings": "Settings"
   }
 }

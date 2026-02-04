@@ -8,6 +8,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SmoothScrollProvider } from '@/components/layout/SmoothScrollProvider';
 import { CustomCursor } from '@/components/ui/CustomCursor';
+import { CookieBanner } from '@/components/ui/CookieBanner';
 import '@/app/globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -119,6 +120,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               },
             }}
           />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>
